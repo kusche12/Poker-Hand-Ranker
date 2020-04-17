@@ -1,0 +1,150 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0e8c36;
+    color: white;
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+    font-family: 'Arial';
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 50px;
+}
+h2 {
+    font-size: 35px;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.title {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.card {
+    background-color: white;
+    border: solid 1px transparent;
+    border-radius: 5px;
+    height: 210px;
+    width: 150px;
+    margin: 20px;
+    overflow: hidden;
+    display: inline;
+    position: relative;
+}
+.card:hover {
+    cursor: pointer;
+}
+.card-pic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
+.card-wrap p {
+    margin: 0;
+    text-align: center;
+    font-size: 20px;
+}
+.add {
+    position: relative;
+    filter: invert(21%) sepia(55%) saturate(7198%) hue-rotate(355deg) brightness(95%) contrast(95%);
+    width: 60px;
+    height: auto;
+    transition: top ease .2s; 
+}
+.card:hover > .add {
+    top: -5px;
+}
+.card:focus > .add {
+    top: -5px;
+}
+
+
+.form-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
+    border: 3px solid white;
+    z-index: 9;
+    border-radius: 5px;
+}
+
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+}
+
+.form-popup h3, label {
+    color: #333333;
+} 
+
+.form-popup h3 {
+    text-align: center;
+    font-size: 25px;
+}
+
+.form-popup select {
+    width: 100%;
+    padding: 10px;
+    margin: 2px 0px 25px;
+}
+
+.form-popup label {
+    font-size: 15px;
+}
+
+.form-container .btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 20px;
+    border: 5px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 45%;
+    margin: 5px;
+    display: inline-block;
+}
+  
+.form-container .cancel {
+    background-color: red;
+}
+
+#warning {
+    display: none;
+    color: red;
+    padding-bottom: 0;
+}
+
+footer {
+    text-align: center;
+}
+
+footer h6 {
+    font-size: 20px;
+}
+
+footer a {
+    color: #78e6ff;
+}

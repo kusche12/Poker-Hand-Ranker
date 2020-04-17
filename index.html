@@ -1,0 +1,103 @@
+<!-- NOTES:
+    -- Add a "hand name" section
+    -- Write algorithm to return the strength of hand 1-10 scale
+    Algorithm: https://www.google.com/search?q=poker+hands+ranked&client=firefox-b-1-d&source=lnms&tbm=isch&sa=X&ved=2ahUKEwix0eHI4-7oAhUJqp4KHfnnB30Q_AUoAXoECBQQAw&biw=1280&bih=585#imgrc=PCdfOoGiYeGCXM
+    
+    -- Random Hand Button (Make sure no card duplicates)
+    -- Reset Button
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <title>Card Counter</title>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>Welcome to the Card Counter</h1>
+            <h2 id='strength'>Current Hand Strength: </h2>
+        </div>
+
+        <div class="row">
+            <div class="card-wrap">
+                <button class="card" id="new-card1" onclick="openForm('0')">
+                    <img class="add" src="img/more.svg">
+                    <img class="card-pic" id="card0">
+                </button>
+                <p id='desc0'></p>
+            </div>
+            <div class="card-wrap">
+                <button class="card" id="new-card2" onclick="openForm('1')">
+                    <img class="add" src="img/more.svg">
+                    <img class="card-pic" id="card1">
+                </button>
+                <p id='desc1'></p>
+            </div>
+            <div class="card-wrap">
+                <button class="card" id="new-card3" onclick="openForm('2')">
+                    <img class="add" src="img/more.svg">
+                    <img class="card-pic" id="card2">
+                </button>
+                <p id='desc2'></p>
+            </div>
+            <div class="card-wrap">
+                <button class="card" id="new-card4" onclick="openForm('3')">
+                    <img class="add" src="img/more.svg">
+                    <img class="card-pic" id="card3">
+                </button>
+                <p id='desc3'></p>
+            </div>
+            <div class="card-wrap">
+                <button class="card" id="new-card5" onclick="openForm('4')">
+                    <img class="add" src="img/more.svg">
+                    <img class="card-pic" id="card4">
+                </button>
+                <p id='desc4'></p>
+            </div>
+        </div>
+
+        <div class="form-popup" id="myForm">
+            <form class="form-container">
+                <h3>Pick a card</h3>
+                <label for="value">Value</label>
+                <select id="card-val" name="value">
+                    <option value="ACE">Ace</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                    <option value="4">Four</option>
+                    <option value="5">Five</option>
+                    <option value="6">Six</option>
+                    <option value="7">Seven</option>
+                    <option value="8">Eight</option>
+                    <option value="9">Nine</option>
+                    <option value="10">Ten</option>
+                    <option value="JACK">Jack</option>
+                    <option value="QUEEN">Queen</option>
+                    <option value="KING">King</option>                   
+                </select>
+                <label for="suit">Suit</label>
+                <select id="card-suit" name="suit">
+                    <option value="SPADES">Spades</option>
+                    <option value="CLUBS">Clubs</option>
+                    <option value="HEARTS">Hearts</option>
+                    <option value="DIAMONDS">Diamonds</option>               
+                </select>
+                <p id='warning'>Card already selected</p>
+                <button type="submit" class="btn" onclick="getCard(event)">Submit</button>
+                <button type="submit" class="btn cancel" onclick="closeForm(event)">Cancel</button>
+            </form>
+        </div>
+    <footer>
+        <h6>Made by <a href="https://kylekusche.com">Kyle Kusche</a></h6>
+    </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
