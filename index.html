@@ -1,11 +1,5 @@
 <!-- NOTES:
-    -- Add a "hand name" section
-    -- Write algorithm to return the strength of hand 1-10 scale
-    Algorithm: https://www.google.com/search?q=poker+hands+ranked&client=firefox-b-1-d&source=lnms&tbm=isch&sa=X&ved=2ahUKEwix0eHI4-7oAhUJqp4KHfnnB30Q_AUoAXoECBQQAw&biw=1280&bih=585#imgrc=PCdfOoGiYeGCXM
-    
-    -- Random Hand Button (Make sure no card duplicates)
-    -- Reset Button
-
+    -- Fix cardStrength in case user decides to change what the cards are on screen
 -->
 
 <!DOCTYPE html>
@@ -22,45 +16,49 @@
     <div class="container">
         <div class="title">
             <h1>Welcome to the Card Counter</h1>
-            <h2 id='strength'>Current Hand Strength: </h2>
+            <h2 id='strength'></h2>
         </div>
 
         <div class="row">
             <div class="card-wrap">
-                <button class="card" id="new-card1" onclick="openForm('0')">
+                <button class="card" id="new-card1" onclick="openForm(0)">
                     <img class="add" src="img/more.svg">
                     <img class="card-pic" id="card0">
                 </button>
                 <p id='desc0'></p>
             </div>
             <div class="card-wrap">
-                <button class="card" id="new-card2" onclick="openForm('1')">
+                <button class="card" id="new-card2" onclick="openForm(1)">
                     <img class="add" src="img/more.svg">
                     <img class="card-pic" id="card1">
                 </button>
                 <p id='desc1'></p>
             </div>
             <div class="card-wrap">
-                <button class="card" id="new-card3" onclick="openForm('2')">
+                <button class="card" id="new-card3" onclick="openForm(2)">
                     <img class="add" src="img/more.svg">
                     <img class="card-pic" id="card2">
                 </button>
                 <p id='desc2'></p>
             </div>
             <div class="card-wrap">
-                <button class="card" id="new-card4" onclick="openForm('3')">
+                <button class="card" id="new-card4" onclick="openForm(3)">
                     <img class="add" src="img/more.svg">
                     <img class="card-pic" id="card3">
                 </button>
                 <p id='desc3'></p>
             </div>
             <div class="card-wrap">
-                <button class="card" id="new-card5" onclick="openForm('4')">
+                <button class="card" id="new-card5" onclick="openForm(4)">
                     <img class="add" src="img/more.svg">
                     <img class="card-pic" id="card4">
                 </button>
                 <p id='desc4'></p>
             </div>
+        </div>
+        <div class="row btn-row">
+            <button class="btn random" onclick="random()">Random</button>
+            <button class="btn reset" onclick="reset()">Reset</button>
         </div>
 
         <div class="form-popup" id="myForm">
